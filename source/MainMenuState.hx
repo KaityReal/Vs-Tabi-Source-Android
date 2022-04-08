@@ -88,7 +88,10 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.06);
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18 * 2, 0, "Tabi v" + CurrentVersion.get() + "\nFNF v" + Application.current.meta.get('version') + " Commit d3cd2e2", 12);
+		var daMultiplier:Float = 2;
+		var daString:String = "Tabi v" + CurrentVersion.get() + "\nFNF v" + Application.current.meta.get('version');
+
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 18 * daMultiplier, 0, daString, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
