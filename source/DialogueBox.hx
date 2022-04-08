@@ -74,6 +74,8 @@ class DialogueBox extends FlxSpriteGroup
 	'gf-talking',
 	'gf-hmm',
 	'gf-letsgo',
+        'gf-worried',
+        'gf-scared',
 	'tabi',
 	'tabi-mad',
 	'tabi-worried'
