@@ -116,6 +116,7 @@ class SettingsMenu extends MusicBeatState
 	Highscore.getInput(),
 	false,
 	false,
+	false,
 	Highscore.getVoice(),
 	Highscore.getRus(),
 	Highscore.getPhoto()
