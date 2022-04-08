@@ -118,7 +118,7 @@ class Cutscene2 extends FlxSpriteGroup
 			add(bgFire2);
 			
 			//genocide board is already in genocidebg but u know shit layering for fire lol
-			genocideBoard = new FlxSprite(genocideBG.x, genocideBG.y).loadGraphic(Paths.image('fire/boards'));
+			genocideBoard = new FlxSprite(genocideBG.x, genocideBG.y).loadGraphic(Paths.image('fire/boards', 'curse'));
 			genocideBoard.antialiasing = true;
 			genocideBoard.scrollFactor.set(0.9, 0.9);
 			add(genocideBoard);
@@ -156,12 +156,12 @@ class Cutscene2 extends FlxSpriteGroup
 			add(fire4);
 			
 			//more layering shit
-			fuckYouFurniture = new FlxSprite(genocideBG.x, genocideBG.y).loadGraphic(Paths.image('fire/glowyfurniture'));
+			fuckYouFurniture = new FlxSprite(genocideBG.x, genocideBG.y).loadGraphic(Paths.image('fire/glowyfurniture', 'curse'));
 			fuckYouFurniture.antialiasing = true;
 			fuckYouFurniture.scrollFactor.set(0.9, 0.9);
 			add(fuckYouFurniture);
 
-			destBoombox = new FlxSprite(400, 130).loadGraphic(Paths.image('tabi/mad/Destroyed_boombox'));
+			destBoombox = new FlxSprite(400, 130).loadGraphic(Paths.image('tabi/mad/Destroyed_boombox', 'curse'));
 			destBoombox.y += (destBoombox.height - 648) * -1;
 			destBoombox.y += 150;
 			destBoombox.x -= 110;
@@ -173,13 +173,13 @@ class Cutscene2 extends FlxSpriteGroup
 		add(tabi);
 		add(bf2);
 		
-		sumsticks = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/mad/overlayingsticks'));
+		sumsticks = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/mad/overlayingsticks', 'curse'));
 		sumsticks.antialiasing = true;
 		sumsticks.scrollFactor.set(0.9, 0.9);
 		sumsticks.active = false;
 		add(sumsticks);
 		
-		bg = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/normal_stage'));
+		bg = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/normal_stage', 'curse'));
 		bg.antialiasing = true;
 		bg.scrollFactor.set(0.9, 0.9);
 		bg.active = false;
@@ -189,7 +189,7 @@ class Cutscene2 extends FlxSpriteGroup
 		add(tabiLaugh);
 		add(bf1);
 		
-		sumtable = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/sumtable'));
+		sumtable = new FlxSprite(-600, -300).loadGraphic(Paths.image('tabi/sumtable', 'curse'));
 		sumtable.antialiasing = true;
 		sumtable.scrollFactor.set(0.9, 0.9);
 		sumtable.active = false;
