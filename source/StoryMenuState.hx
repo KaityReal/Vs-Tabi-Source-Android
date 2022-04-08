@@ -387,10 +387,6 @@ class StoryMenuState extends MusicBeatState
 	function updateText()
 	{
 		tabiCharacter.animation.play('tabi');
-		if (!(curWeek >= 7))
-		{
-		grpWeekCharacters.members[0].animation.play(weekCharacters[curWeek][0]);
-		}
 		grpWeekCharacters.members[1].animation.play(weekCharacters[curWeek][1]);
 		grpWeekCharacters.members[2].animation.play(weekCharacters[curWeek][2]);
 		txtTracklist.text = "Tracks\n";
@@ -421,14 +417,8 @@ class StoryMenuState extends MusicBeatState
 		
 		tabiCharacter.offset.set(150, 200);
 		tabiCharacter.setGraphicSize(Std.int(tabiCharacter.width * 0.99));
-		if (curWeek >= 7)
-		{
 		grpWeekCharacters.members[0].visible = false;
 		tabiCharacter.visible = true;
-		} else {
-		tabiCharacter.visible = false;
-		grpWeekCharacters.members[0].visible = true;
-		}
 
 		var stringThing:Array<String> = weekData[curWeek];
 
