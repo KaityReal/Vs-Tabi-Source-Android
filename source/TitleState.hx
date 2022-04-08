@@ -49,11 +49,11 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		isReady = false;
-
-		#if polymod
-		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
 		#end
+
+		isReady = false;
 		
 		PlayerSettings.init();
 		
