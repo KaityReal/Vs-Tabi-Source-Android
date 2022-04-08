@@ -59,6 +59,10 @@ class SettingsMenu extends MusicBeatState
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
+                #if android
+	        addVirtualPad(UP_DOWN, A_B);
+                #end
+
 		super.create();
 	}
 	
@@ -95,6 +99,7 @@ class SettingsMenu extends MusicBeatState
 	
 	ourFuckingList.push('Downscroll $downScrollShit');
 	ourFuckingList.push('New Input System $inputShit');
+	ourFuckingList.push('Android Controls');
 	ourFuckingList.push('Custom Keybindings');
 	ourFuckingList.push('Visual Effects');
 	ourFuckingList.push('Voicelines $voiceShit');
@@ -176,10 +181,12 @@ class SettingsMenu extends MusicBeatState
 			case 1:
 				Highscore.toggleInput();
 			case 2:
-				FlxG.switchState(new KeysMenu());
+				FlxG.switchState(new android.AndroidControlsMenu());
 			case 3:
-				FlxG.switchState(new EffectsMenu());
+				FlxG.switchState(new KeysMenu());
 			case 4:
+				FlxG.switchState(new EffectsMenu());
+			case 5:
 				/*if (!(Highscore.getRus() && !Highscore.getVoice()))
 				{*/
 					Highscore.toggleVoice();
@@ -189,7 +196,7 @@ class SettingsMenu extends MusicBeatState
 				{*/
 					Highscore.toggleRus();
 				//}
-			case 6:
+			case 7:
 				Highscore.togglePhoto();
 			}
 			fuckTheClearance();
