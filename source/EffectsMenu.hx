@@ -60,6 +60,10 @@ class EffectsMenu extends MusicBeatState
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
+                #if android
+	        addVirtualPad(UP_DOWN, A_B);
+                #end
+
 		super.create();
 	}
 	
