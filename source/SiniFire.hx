@@ -18,7 +18,7 @@ class SiniFire extends FlxSprite
 			toUseString = 'fire/fireglow';
 		}
 		
-		frames = Paths.getSparrowAtlas(toUseString);
+		frames = Paths.getSparrowAtlas(toUseString, 'shared');
 		var frameShit:Array<Int> = [];
 
 		for (i in 0...maxFrames)
