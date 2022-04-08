@@ -86,6 +86,7 @@ class PlayState extends MusicBeatState
 	public var samShit:FlxSprite;
 
 	var filters:Array<BitmapFilter> = [];
+        var bullshitKeys:Array<String> = [];
 	var filterList:Array<BitmapFilter> = [];
 	var filterMap:Map<String, {filter:BitmapFilter, ?onUpdate:Void->Void}>;
 
@@ -275,7 +276,7 @@ class PlayState extends MusicBeatState
 		
 		FlxG.game.filtersEnabled = false;
 		
-		var bullshitKeys:Array<String> = Highscore.getEffectKeys();
+		bullshitKeys = Highscore.getEffectKeys();
 		
 		for (key in filterMap.keys())
 		{
@@ -327,37 +328,6 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.add(cutsceneCam);
 
 		FlxCamera.defaultCameras = [camGame];
-
-		//IT DOESNT END HERE FUCK
-		camGame.setFilters(filters);
-		//camHUD2.setFilters(filters);
-		noteCam.setFilters(filters);
-		//noteCam2.setFilters(filters);
-		camHUD3.setFilters(filters);
-		cutsceneCam.setFilters(filters);
-		camHUD5.setFilters(filters);
-		camGame.filtersEnabled = true;
-		//camHUD2.filtersEnabled = true;
-		noteCam.filtersEnabled = true;
-		//noteCam2.filtersEnabled = true;
-		camHUD3.filtersEnabled = true;
-		cutsceneCam.filtersEnabled = true;
-		camHUD5.filtersEnabled = true;
-		
-		for (i in 0...filterList.length)
-		{
-		var kys = bullshitKeys[i];
-		//if (kys == "Hq2x" || kys == "Grayscale" || kys == "Scanline" || kys == "Tiltshift")
-		if (Highscore.getEffects().contains(kys))
-			filters.push(filterList[i]);
-		else
-			filters.remove(filterList[i]);
-		}
-		
-		filters.push(chromaticAberration);
-		//filters.push(shockwave);
-		filters.push(brightShader);
-		//WELL SHIT
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -3677,7 +3647,7 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}*/
 		var fkUMultiplier:Float = 5;
-		if ((FlxG.sound.music.time > Conductor.songPosition + fkUMultiplier || FlxG.sound.music.time < Conductor.songPosition - fkUMultiplier) || (vocals.playing && (vocals.time > Conductor.songPosition || vocals.time < Conductor.songPosition)))
+		if (FlxG.sound.music.time > Conductor.songPosition + 20 || FlxG.sound.music.time < Conductor.songPosition - 20)
 		{
 			resyncVocals();
 		}
@@ -3799,6 +3769,41 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+
+		//fix for my stupidity because i am a mistake lol
+		if (curBeat == 0)
+		{
+		//IT DOESNT END HERE FUCK
+		camGame.setFilters(filters);
+		//camHUD2.setFilters(filters);
+		noteCam.setFilters(filters);
+		//noteCam2.setFilters(filters);
+		camHUD3.setFilters(filters);
+		cutsceneCam.setFilters(filters);
+		camHUD5.setFilters(filters);
+		camGame.filtersEnabled = true;
+		//camHUD2.filtersEnabled = true;
+		noteCam.filtersEnabled = true;
+		//noteCam2.filtersEnabled = true;
+		camHUD3.filtersEnabled = true;
+		cutsceneCam.filtersEnabled = true;
+		camHUD5.filtersEnabled = true;
+
+		for (i in 0...filterList.length)
+		{
+		var kys = bullshitKeys[i];
+		//if (kys == "Hq2x" || kys == "Grayscale" || kys == "Scanline" || kys == "Tiltshift")
+		if (Highscore.getEffects().contains(kys))
+			filters.push(filterList[i]);
+		else
+			filters.remove(filterList[i]);
+		}
+
+		filters.push(chromaticAberration);
+		//filters.push(shockwave);
+		filters.push(brightShader);
+		//WELL SHIT
+		}
 		
 		/*#if desktop
 		if (!FlxG.fullscreen)
