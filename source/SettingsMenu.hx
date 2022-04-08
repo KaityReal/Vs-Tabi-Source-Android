@@ -191,7 +191,7 @@ class SettingsMenu extends MusicBeatState
 				{*/
 					Highscore.toggleVoice();
 				//}
-			case 5:
+			case 6:
 				/*if (!(Highscore.getVoice() && !Highscore.getRus()))
 				{*/
 					Highscore.toggleRus();
