@@ -2178,12 +2178,16 @@ class PlayState extends MusicBeatState
 
 		if ((!crazyMode && healthBar.percent > 80) || (crazyMode && (health / 2 * 100) > 100))
 		{
+                        #if desktop
 			iconRPC = iconRPCBefore + "-dead";
+                        #end
 			iconP2.animation.curAnim.curFrame = 1;
 		}
 		else
 		{
+                        #if desktop
 			iconRPC = iconRPCBefore;
+                        #end
 			iconP2.animation.curAnim.curFrame = 0;
 		}
 
