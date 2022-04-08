@@ -2658,20 +2658,20 @@ class PlayState extends MusicBeatState
 		
 		var gtk = Highscore.getKeyBind;
 		
-		var up = chk(prk, gtk(0)) || chk(prk, gtk(4));
-		var left = chk(prk, gtk(1)) || chk(prk, gtk(5));
-		var down = chk(prk, gtk(2)) || chk(prk, gtk(6));
-		var right = chk(prk, gtk(3)) || chk(prk, gtk(7));
+		var up = chk(prk, gtk(0)) || chk(prk, gtk(4)) || controls.UP;
+		var left = chk(prk, gtk(1)) || chk(prk, gtk(5)) || controls.LEFT;
+		var down = chk(prk, gtk(2)) || chk(prk, gtk(6)) || controls.DOWN;
+		var right = chk(prk, gtk(3)) || chk(prk, gtk(7)) || controls.RIGHT;
 
-		var upP = chk(prkP, gtk(0)) || chk(prkP, gtk(4));
-		var leftP = chk(prkP, gtk(1)) || chk(prkP, gtk(5));
-		var downP = chk(prkP, gtk(2)) || chk(prkP, gtk(6));
-		var rightP = chk(prkP, gtk(3)) || chk(prkP, gtk(7));
+		var upP = chk(prkP, gtk(0)) || chk(prkP, gtk(4)) || controls.UP_P;
+		var leftP = chk(prkP, gtk(1)) || chk(prkP, gtk(5)) || controls.LEFT_P;
+		var downP = chk(prkP, gtk(2)) || chk(prkP, gtk(6)) || controls.DOWN_P;
+		var rightP = chk(prkP, gtk(3)) || chk(prkP, gtk(7)) || controls.RIGHT_P;
 
-		var upR = chk(prkR, gtk(0)) || chk(prkR, gtk(4));
-		var leftR = chk(prkR, gtk(1)) || chk(prkR, gtk(5));
-		var downR = chk(prkR, gtk(2)) || chk(prkR, gtk(6));
-		var rightR = chk(prkR, gtk(3)) || chk(prkR, gtk(7));
+		var upR = chk(prkR, gtk(0)) || chk(prkR, gtk(4)) || controls.UP_R;
+		var leftR = chk(prkR, gtk(1)) || chk(prkR, gtk(5)) || controls.LEFT_R;
+		var downR = chk(prkR, gtk(2)) || chk(prkR, gtk(6)) || controls.DOWN_R;
+		var rightR = chk(prkR, gtk(3)) || chk(prkR, gtk(7)) || controls.RIGHT_R;
 
 		var controlArray:Array<Bool> = [leftP, downP, upP, rightP];
 		
