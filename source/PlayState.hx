@@ -1939,16 +1939,6 @@ class PlayState extends MusicBeatState
 			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && camFollow.x != boyfriend.getMidpoint().x - 100)
 			{
 				camFollow.setPosition(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
-				if (boyfriend.curCharacter.startsWith("bf-tabi"))
-				{
-				camFollow.setPosition(boyfriend.getMidpoint().x - 530, dad.getMidpoint().y);
-				if (boyfriend.curCharacter.contains("-crazy"))
-				{
-					FlxTween.tween(FlxG.camera, {zoom: 0.65}, (Conductor.stepCrochet * 4 / 2000), {ease: FlxEase.elasticInOut});
-				} else {
-					FlxTween.tween(FlxG.camera, {zoom: 0.55}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
-				}
-				}
 
 				switch (curStage)
 				{
@@ -1962,6 +1952,12 @@ class PlayState extends MusicBeatState
 					case 'schoolEvil':
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 						camFollow.y = boyfriend.getMidpoint().y - 200;
+					case 'curse':
+						camFollow.setPosition(boyfriend.getMidpoint().x - 530, dad.getMidpoint().y);
+						FlxTween.tween(FlxG.camera, {zoom: 0.55}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
+					case 'genocide':
+						camFollow.setPosition(boyfriend.getMidpoint().x - 530, dad.getMidpoint().y);
+						FlxTween.tween(FlxG.camera, {zoom: 0.65}, (Conductor.stepCrochet * 4 / 2000), {ease: FlxEase.elasticInOut});
 				}
 
 				if (SONG.song.toLowerCase() == 'tutorial')
