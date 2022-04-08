@@ -4,9 +4,6 @@ import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
-#if polymod
-import polymod.format.ParseRules.TargetSignatureElement;
-#end
 import flixel.FlxG;
 
 using StringTools;
@@ -113,9 +110,9 @@ class Note extends FlxSprite
 			default:
 				if (PlayState.SONG.song.toLowerCase() == 'genocide')
 				{
-					frames = Paths.getSparrowAtlas('tabi/mad/NOTE_assets');
+					frames = Paths.getSparrowAtlas('tabi/mad/NOTE_assets', 'curse');
 				} else {
-					frames = Paths.getSparrowAtlas('NOTE_assets');
+					frames = Paths.getSparrowAtlas('NOTE_assets', 'shared');
 				}
 
 				if (isDownscroll)
