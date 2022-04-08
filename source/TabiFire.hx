@@ -11,7 +11,7 @@ class TabiFire extends FlxSprite
 		
 		scale.set(c, d);
 		
-		loadGraphic(Paths.image('tabi/mad/fireshit'), true, 433, 400);
+		loadGraphic(Paths.image('tabi/mad/fireshit', 'curse'), true, 433, 400);
 		
 		antialiasing = true;
 		animation.add('fire', [0, 1, 2], 15, true);
