@@ -47,17 +47,17 @@ class AndroidControlsMenu extends MusicBeatState
 		titleText.alpha = 0.4;
 		add(titleText);
 
-		vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
+		vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, true);
 		vpad.alpha = 0;
 		add(vpad);
 
-		hbox = new FlxHitbox(0.75, ClientPrefs.globalAntialiasing);
+		hbox = new FlxHitbox(0.75, true);
 		hbox.visible = false;
 		add(hbox);
 
 		var exitbutton = new FlxButton(FlxG.width - 200, 50, "Exit", function()
 		{
-			FlxG.switchState(new options.OptionsState());
+			FlxG.switchState(new SettingsMenu());
 		});
 		exitbutton.setGraphicSize(Std.int(exitbutton.width) * 3);
 		exitbutton.label.setFormat(null, 16, 0x333333, "center");
@@ -67,7 +67,7 @@ class AndroidControlsMenu extends MusicBeatState
 		var savebutton = new FlxButton(exitbutton.x, exitbutton.y + 100, "Save", function()
 		{
 			save();
-			FlxG.switchState(new options.OptionsState());
+			FlxG.switchState(new SettingsMenu());
 		});
 		savebutton.setGraphicSize(Std.int(savebutton.width) * 3);
 		savebutton.label.setFormat(null, 16, 0x333333, "center");
@@ -150,20 +150,20 @@ class AndroidControlsMenu extends MusicBeatState
 		{
 				case 'Pad-Right':
 					remove(vpad);
-					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
+					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, true);
 					add(vpad);
 				case 'Pad-Left':
 					remove(vpad);
-					vpad = new FlxVirtualPad(FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
+					vpad = new FlxVirtualPad(FULL, NONE, 0.75, true);
 					add(vpad);
 				case 'Pad-Custom':
 					remove(vpad);
-					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
+					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, true);
 					add(vpad);
 					loadcustom();
 				case 'Duo':
 					remove(vpad);
-					vpad = new FlxVirtualPad(DUO, NONE, 0.75, ClientPrefs.globalAntialiasing);
+					vpad = new FlxVirtualPad(DUO, NONE, 0.75, true);
 					add(vpad);
 				case 'Hitbox':
 					vpad.alpha = 0;
