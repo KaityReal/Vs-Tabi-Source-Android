@@ -73,9 +73,9 @@ class DialogueBox extends FlxSpriteGroup
 	'gf',
 	'gf-talking',
 	'gf-hmm',
-	'gf-letsgo',
         'gf-worried',
         'gf-scared',
+	'gf-letsgo',
 	'tabi',
 	'tabi-mad',
 	'tabi-worried'
@@ -202,10 +202,10 @@ class DialogueBox extends FlxSpriteGroup
 		box.x += 40;
 		}
 		
-		for (i in 0...10)
+		for (i in 0...12)
 		{
 			var isRight:Bool = false;
-			var rightInts:Array<Int> = [1, 2, 3, 4, 5, 6];
+			var rightInts:Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8];
 			if (rightInts.contains(i))
 			{
 				isRight = true;
