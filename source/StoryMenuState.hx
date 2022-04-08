@@ -387,6 +387,8 @@ class StoryMenuState extends MusicBeatState
 	function updateText()
 	{
 		tabiCharacter.animation.play('tabi');
+
+		grpWeekCharacters.members[0].visible = false;
 		grpWeekCharacters.members[1].animation.play(weekCharacters[curWeek][1]);
 		grpWeekCharacters.members[2].animation.play(weekCharacters[curWeek][2]);
 		txtTracklist.text = "Tracks\n";
