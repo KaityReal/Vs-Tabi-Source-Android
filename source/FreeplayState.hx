@@ -48,7 +48,7 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{		
-		if (!Highscore.getPhoto() && !Highscore.getDS())
+		if (!Highscore.getPhoto())
 		{
 		filters = [chromaticAberration];
 		FlxG.camera.setFilters(filters);
@@ -60,7 +60,7 @@ class FreeplayState extends MusicBeatState
 		DiscordClient.changePresence("In Freeplay Menu...", null);
 		#end
 
-		addWeek(['My-Battle', 'Last-Chance', 'Genocide'], curseUse, ['tabi', 'tabi', 'tabi-crazy']);
+		addWeek(['My-Battle', 'Last-Chance', 'Genocide'], 0, ['tabi', 'tabi', 'tabi-crazy']);
 
 		// LOAD MUSIC
 
