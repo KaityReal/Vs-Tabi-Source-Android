@@ -93,7 +93,7 @@ class Cutscene2 extends FlxSpriteGroup
 		
 		//START GENOCIDE FUCK COPYPASTE			
 			//genocideBG = new SequenceBG(-600, -300, shitList, true, 2560, 1400, true);
-			genocideBG = new FlxSprite(-600, -300).loadGraphic(Paths.image('fire/wadsaaa'));
+			genocideBG = new FlxSprite(-600, -300).loadGraphic(Paths.image('fire/wadsaaa', 'curse'));
 			genocideBG.antialiasing = true;
 			genocideBG.scrollFactor.set(0.9, 0.9);
 			add(genocideBG);
